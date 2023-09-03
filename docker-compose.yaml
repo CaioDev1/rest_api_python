@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: caio123  
+      POSTGRES_USER: caio
+      POSTGRES_DB: test_db
+      PGDATA: /var/lib/postgresql/data/pgdata
+      PGUSER: caio
+    ports:
+      - "5432:5432"
+    volumes:
+      - .docker/postgres:/var/lib/postgresql/data
